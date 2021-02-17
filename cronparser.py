@@ -1,4 +1,4 @@
-from time import validate_hour_min, calculate_difference
+from timecalc import validate_hour_min, calculate_difference
 
 
 def parse_input(file):

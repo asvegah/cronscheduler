@@ -1,8 +1,8 @@
 import sys
 import select
 
-from time import validate_format
-from parser import parse_input, next_crontab_time 
+from timecalc import validate_format
+from cronparser import parse_input, next_crontab_time 
 
 def main():
     try:
