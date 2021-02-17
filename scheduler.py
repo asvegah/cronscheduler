@@ -1,7 +1,8 @@
 import sys
 import select
 
-from time import validate_format 
+from time import validate_format
+from parser import parse_input, next_crontab_time 
 
 def main():
     try:
@@ -15,8 +16,8 @@ def main():
         validated_time = validate_format(current_time)
 
         if validated_time:
-            crontab_list = parse_config(sys.stdin)
-            return next_crontab_time(validated_current_time, crontab_list)
+            crontab = parse_input(sys.stdin)
+            return next_crontab_time(validated_time, crontab)
 
     except IndexError:
         if len(sys.argv) != 2:
@@ -25,7 +26,7 @@ def main():
             
             Example command line 👇
 
-            ​./app.py 16:10 < config
+            ​./scheduler.py 16:10 < config
 
             ''')
         else:
@@ -37,6 +38,6 @@ def main():
 
             Example command line 👇
 
-            ​./app.py 16:10 < config
+            ​./scheduler.py 16:10 < config
 
             ''')

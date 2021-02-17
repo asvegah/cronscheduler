@@ -76,7 +76,7 @@ def validate_hour_min(hour, minute):
         sys.exit()
 
 
-def calculation_difference(cron_time, current_time):
+def calculate_difference(cron_time, current_time):
     today = 'today'
     tomorrow = 'tomorrow'
 
