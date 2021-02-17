@@ -41,3 +41,6 @@ def main():
             ​./scheduler.py 16:10 < config
 
             ''')
+
+if __name__ == '__main__':
+    main()
