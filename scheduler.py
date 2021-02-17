@@ -1,6 +1,8 @@
 import sys
 import select
 
+from time import validate_format 
+
 def main():
     try:
         if len(sys.argv) != 2:
@@ -10,9 +12,9 @@ def main():
             raise IndexError
 
         current_time = sys.argv[1]
-        validated_current_time = validate_time_format(current_time)
+        validated_time = validate_format(current_time)
 
-        if validated_current_time:
+        if validated_time:
             crontab_list = parse_config(sys.stdin)
             return next_crontab_time(validated_current_time, crontab_list)
 
